@@ -162,6 +162,41 @@ def p392(raw: list, n: int) -> list:
     return d392.p392(raw, n)
 
 
+def p391(raw: int) -> str:
+    """
+    The ABACABA Sequence [Easy]
+
+    Write a program to print the 26th iteration of the ABACABA sequence.
+    The ABACABA sequence is defined as follows: the first iteration is the first letter of the alphabet (a).
+    To form the second iteration, you take the second letter (b) and put the first iteration (just a in this case)
+    before and after it, to get aba. For each subsequent iteration, place a copy of the previous iteration on
+    either side of the next letter of the alphabet.
+
+    Here are the first 5 iterations of the sequence:
+
+    a
+    aba
+    abacaba
+    abacabadabacaba
+    abacabadabacabaeabacabadabacaba
+    :param raw:
+    :return:
+    """
+    import d391
+    return d391.p391(raw)
+
+
+# Need efficient solution
+# Challenge
+def p390(raw: int) -> int:
+    """
+
+    :param raw:
+    :return:
+    """
+    import d390
+    return d390.p390()
+
 if __name__ == '__main__':
  #print(globals()['d' + input('>')](multi_in()))  # ENTER to EOF
  print(globals()['p'+input('>')](sys.stdin.readlines())) # Ctrl-D to EOF
