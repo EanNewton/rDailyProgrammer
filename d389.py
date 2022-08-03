@@ -89,15 +89,19 @@ def test():
     gina = None
 
     def monty(contestant=None) -> str:
+        gina = False
         if contestant is None:
+            gina = True
             contestant = [0, lambda _: True]
         wins = 0
         gina_last = [alice, bob]
         for _ in range(1000):
-            gina = gina_last[0]
+            if gina:
+                contestant = gina_last[0]
             if p389(contestant):
                 wins += 1
-            gina_last = gina_last[::-1]
+            else:
+                gina_last = gina_last[::-1]
         return f"{float(wins / 1000):.2%}"
 
     print(f"Alice: {monty(alice)}")
@@ -108,4 +112,34 @@ def test():
     print(f"Frank: {monty(frank)}")
     print(f"Gina: {monty(gina)}")
 
-test()
+
+#
+# Code Golf solution
+#
+from random import shuffle as S, choice as C
+T=lambda _:1
+F=lambda _:0
+E=lambda:C((0,1,2))
+def p():
+    def r(c,a=0):
+        d=[0,0,1]
+        S(d)
+        while a==c[0]or d[a]:a=E()
+        d.pop(a)
+        i=c[0]==2
+        if c[1](a):
+            d.pop(-1)if i else d.pop(c[0])
+            return d[0]
+        return d[-1]if i else d[c[0]]
+    def m(n,c=[0,T],w=0,i=1000):
+        l=[[0,F],[0,T]]
+        for _ in range(i):
+            if r(c):w+=1
+            elif n=='Gina':
+                l=l[::-1]
+                c=l[0]
+        print(f"{n:<6} {float(w/i):.1%}")
+    for _ in[('Alice',[0,F]),('Bob',[0,T]),('Carol',[E(),lambda _:C((0, 1))]),('Dave',[E(),F]),('Erin',[E(),T]),('Frank',[0,lambda _:1if _!=1else 0]),('Gina',)]:m(*_)
+p()
+
+# test()
