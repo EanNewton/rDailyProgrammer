@@ -197,6 +197,17 @@ def p390(raw: int) -> int:
     import d390
     return d390.p390()
 
+
+def p389(raw: int) -> float:
+    """
+    The Monty Hall Problem [Easy]
+    :param raw:
+    :return:
+    """
+    import d389
+    d389.test()
+
+
 if __name__ == '__main__':
  #print(globals()['d' + input('>')](multi_in()))  # ENTER to EOF
  print(globals()['p'+input('>')](sys.stdin.readlines())) # Ctrl-D to EOF
