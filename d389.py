@@ -117,9 +117,7 @@ def test():
 # Code Golf solution
 #
 from random import shuffle as S, choice as C
-T=lambda _:1
-F=lambda _:0
-E=lambda:C((0,1,2))
+T,F,E=lambda _:1,lambda _:0,lambda:C((0,1,2))
 def p():
     def r(c,a=0):
         d=[0,0,1]
