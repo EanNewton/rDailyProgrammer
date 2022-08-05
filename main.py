@@ -208,6 +208,16 @@ def p389(raw: int) -> float:
     d389.test()
 
 
+def p388(raw: int) -> int:
+    """
+    Next Palindrome [Intermediate]
+    :param raw:
+    :return:
+    """
+    import d388
+    return d388.p388(raw)
+
+
 if __name__ == '__main__':
  #print(globals()['d' + input('>')](multi_in()))  # ENTER to EOF
  print(globals()['p'+input('>')](sys.stdin.readlines())) # Ctrl-D to EOF
