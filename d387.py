@@ -137,7 +137,10 @@ def p387b3(raw: str) -> str:
 
 # A="abcdefghijklmnopqrstuvwxyz"
 # from string import ascii_lowercase as A
-A=list(map(chr,range(65,91)))
+# A=list(map(chr,range(65,91)))
+A=[*map(chr,range(*b"A["))] # misses Z
+# A=[*map(chr,range(65,91))]
+print(A)
 def p012(s,n):
     i=lambda _:((n+A.index(_.upper()))%26)
     return"".join([(A[i(c)].lower(),A[i(c)])[c in A]if c.upper()in A else c for c in s])
