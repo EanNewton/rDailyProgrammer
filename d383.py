@@ -88,7 +88,7 @@ def b2() -> set[str]:
             tic = perf_counter()
 
 
-def b2():
+def b2g():
     V,d=set(),dict()
     with open("d383b2","r")as f:
         for w in f:

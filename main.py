@@ -232,6 +232,22 @@ def p387(raw: str, n: int) -> str:
     return d387.p387b2(raw, n)
 
 
+def p383():
+    """
+    Necklace Matching [Easy]
+    :return:
+    """
+    import d383
+
+
+def p378():
+    """
+    Havel-Hakimi Algorithm [Easy]
+    :return:
+    """
+    import d378
+
+
 if __name__ == '__main__':
  #print(globals()['d' + input('>')](multi_in()))  # ENTER to EOF
  print(globals()['p'+input('>')](sys.stdin.readlines())) # Ctrl-D to EOF
