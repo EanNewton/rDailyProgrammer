@@ -78,6 +78,17 @@ def p378(raw: list) -> bool:
     return p378(raw)
 
 
+def c1(r):
+    r=[_ for _ in r if _!=0]
+    if len(r)==0:return 1
+    r.sort()
+    r=r[::-1]
+    n=r.pop(0)
+    if n>len(r):return 0
+    r=[r[_]-1if n>_ else r[_]for _ in range(len(r))]
+    return c1(r)
+
+
 def test_w4():
     assert w4(4, [5, 4, 3, 2, 1]) == [4, 3, 2, 1, 1]
     assert w4(11, [14, 13, 13, 13, 12, 10, 8, 8, 7, 7, 6, 6, 4, 4, 2]) == [13, 12, 12, 12, 11, 9, 7, 7, 6, 6, 5, 6, 4, 4, 2]
