@@ -78,15 +78,14 @@ def p378(raw: list) -> bool:
     return p378(raw)
 
 
-def c1(r):
+def c(r):
     r=[_ for _ in r if _!=0]
     if len(r)==0:return 1
-    r.sort()
-    r=r[::-1]
+    r=sorted(r)[::-1]
     n=r.pop(0)
     if n>len(r):return 0
     r=[r[_]-1if n>_ else r[_]for _ in range(len(r))]
-    return c1(r)
+    return c(r)
 
 
 def test_w4():
@@ -96,7 +95,8 @@ def test_w4():
     assert w4(3, [10, 10, 10]) == [9, 9, 9]
     assert w4(1, [1]) == [0]
     print("Passed!")
-    
+
+
 def test():
     assert p378([5, 3, 0, 2, 6, 2, 0, 7, 2, 5]) == False
     assert p378([4, 2, 0, 1, 5, 0]) == False
@@ -112,5 +112,21 @@ def test():
     assert p378([]) == True
     print("Passed!")
 
+
+def test_c():
+    assert c([5, 3, 0, 2, 6, 2, 0, 7, 2, 5]) == False
+    assert c([4, 2, 0, 1, 5, 0]) == False
+    assert c([3, 1, 2, 3, 1, 0]) == True
+    assert c([16, 9, 9, 15, 9, 7, 9, 11, 17, 11, 4, 9, 12, 14, 14, 12, 17, 0, 3, 16]) == True
+    assert c([14, 10, 17, 13, 4, 8, 6, 7, 13, 13, 17, 18, 8, 17, 2, 14, 6, 4, 7, 12]) == True
+    assert c([15, 18, 6, 13, 12, 4, 4, 14, 1, 6, 18, 2, 6, 16, 0, 9, 10, 7, 12, 3]) == False
+    assert c([6, 0, 10, 10, 10, 5, 8, 3, 0, 14, 16, 2, 13, 1, 2, 13, 6, 15, 5, 1]) == False
+    assert c([2, 2, 0]) == False
+    assert c([3, 2, 1]) == False
+    assert c([1, 1]) == True
+    assert c([1]) == False
+    assert c([]) == True
+    print("Passed!")
+
 # test_w4()
-test()
+test_c()
