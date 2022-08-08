@@ -248,6 +248,14 @@ def p378():
     import d378
 
 
+def p375():
+    """
+    Add one to each digit [Easy]
+    :return:
+    """
+    import d375
+
+
 if __name__ == '__main__':
  #print(globals()['d' + input('>')](multi_in()))  # ENTER to EOF
  print(globals()['p'+input('>')](sys.stdin.readlines())) # Ctrl-D to EOF
