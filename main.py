@@ -256,6 +256,17 @@ def p375():
     import d375
 
 
+def p364(raw: str) -> str:
+    """
+    Dice Roller [Easy]
+    :param raw:
+    :return:
+    """
+    import d364
+    return d364.p364(raw)
+
+
+
 if __name__ == '__main__':
  #print(globals()['d' + input('>')](multi_in()))  # ENTER to EOF
  print(globals()['p'+input('>')](sys.stdin.readlines())) # Ctrl-D to EOF
