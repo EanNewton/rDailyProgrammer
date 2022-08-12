@@ -30,6 +30,10 @@ def part1(raw: str) -> int:
     return result
 
 
+def p1(r):
+    return sum([1 if _=='('else-1for _ in r])
+
+
 def part2(raw: str) -> int:
     """
     Now, given the same instructions, find the position of the first character that causes him to enter
